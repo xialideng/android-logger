@@ -5,6 +5,11 @@ final class Helper {
 	private Helper() {
 	}
 
+    /**
+     * [thread][(ClassName.java:lineNumber)#Method]
+     */
+    private final String CALLER_MESSAGE_FORMATTER = "[%s][(%s.java:%s)#%s]";
+
 	public static final String LINE_SEPARATOR = getLineSeparator();
 
 	public static String getLineSeparator() {
@@ -18,6 +23,15 @@ final class Helper {
 	public static boolean isEmpty(CharSequence str) {
 		return str == null || str.length() == 0;
 	}
+
+    public static String makeCallerInfos(String[] caller) {
+        return String.format(CALLER_MESSAGE_FORMATTER, caller[0], caller[1], caller[2], caller[3]);
+    }
+
+    public static String makePrintStack(String caller, String message) {
+        StringBuffer sb = new StringBuffer();
+        return sb.append(caller).append("  ").append(message).toString();
+    }
 
 	public static boolean equals(CharSequence a, CharSequence b) {
 		if (a == b)

@@ -14,7 +14,7 @@ public interface Interceptor {
 	/**
 	 *
 	 * @param level
-	 *            日志打印级别
+	 *            日志打印类型
 	 * @param tag
 	 *            标签
 	 * @param caller
@@ -25,5 +25,5 @@ public interface Interceptor {
 	 * @param message
 	 *            消息
 	 */
-	void log(int level, String tag, String[] caller, String message);
+	void log(int type, String tag, String[] caller, String message);
 }

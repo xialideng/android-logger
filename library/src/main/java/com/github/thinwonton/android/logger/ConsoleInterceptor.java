@@ -7,8 +7,6 @@ import android.util.Log;
  */
 public class ConsoleInterceptor implements Interceptor {
 
-	private final String CALLER_MESSAGE_FORMATTER = "[%s][(%s.java:%s)#%s]";
-
 	private static final int CHUNK_SIZE = 4000;
 
 	private int level;
@@ -45,13 +43,12 @@ public class ConsoleInterceptor implements Interceptor {
 		}
 	}
 
-	private String makePrintStack(String caller, String message) {
-		StringBuffer sb = new StringBuffer();
-		return sb.append(caller).append("  ").append(message).toString();
+    protected String makePrintStack(String caller, String message) {
+        return Helper.makePrintStack(caller, message);
 	}
 
-	private String makeCallerInfos(String[] caller) {
-		return String.format(CALLER_MESSAGE_FORMATTER, caller[0], caller[1], caller[2], caller[3]);
+	protected String makeCallerInfos(String[] caller) {
+		return Helper.makeCallerInfos(caller);
 	}
 
 	private void print(int type, String tag, String message) {
