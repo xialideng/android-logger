@@ -5,7 +5,7 @@ package com.github.thinwonton.android.logger;
  */
 public interface FileCreator {
     /**
-     * 生成文件名
+     * 获取文件名
      * @return
      */
     String getFileName();

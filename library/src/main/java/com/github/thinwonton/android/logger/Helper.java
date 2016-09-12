@@ -8,7 +8,7 @@ final class Helper {
     /**
      * [thread][(ClassName.java:lineNumber)#Method]
      */
-    private final String CALLER_MESSAGE_FORMATTER = "[%s][(%s.java:%s)#%s]";
+    private static final String CALLER_MESSAGE_FORMATTER = "[%s][(%s.java:%s)#%s]";
 
 	public static final String LINE_SEPARATOR = getLineSeparator();
 

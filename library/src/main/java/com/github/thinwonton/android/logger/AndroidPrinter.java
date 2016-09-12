@@ -126,7 +126,9 @@ public class AndroidPrinter implements Printer {
 		if (!Helper.isEmpty(msg)) {
 			List<Interceptor> interceptors = getSettings().getInterceptors();
 			for (Interceptor interceptor : interceptors) {
-				interceptor.log(type, tag, callerInfos, msg);
+                if (type >= interceptor.getLevel()) {
+                    interceptor.log(type, tag, callerInfos, msg);
+                }
 			}
 		}
 

@@ -5,6 +5,8 @@ package com.github.thinwonton.android.logger;
  */
 public class Logger {
 
+    public static boolean DEBUG = false;
+
 	private static Printer printer;
 
 	private static final String DEFAULT_TAG = Logger.class.getSimpleName();
